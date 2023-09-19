@@ -10,6 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
     - run: ./build.sh ${{ inputs.document }} ${{ inputs.name }}
       shell: bash
       name: Build document
