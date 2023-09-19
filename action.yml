@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: .build.sh ${{ inputs.document }} ${{ inputs.name }}
+    - run: ./build.sh ${{ inputs.document }} ${{ inputs.name }}
       shell: bash
       name: Build document
     - uses: actions/upload-artifact@v3.1.3
