@@ -1,0 +1,20 @@
+name: Build Action
+description: Builds typst documents
+inputs:
+  document:
+    description: "Path to .typ file"
+    required: true
+  name:
+    description: "Name of the pdf document"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: .build.sh ${{ inputs.document }} ${{ inputs.name }}
+      shell: bash
+      name: Build document
+    - uses: actions/upload-artifact@v3.1.3
+      name: Upload PDF
+      with:
+        name: "${{ inputs.name }}"
+        path: "${{ inputs.name }}"
