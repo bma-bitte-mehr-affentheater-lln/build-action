@@ -1,5 +1,5 @@
 # build-action
-Github Action that builds our documents
+Github Action that builds and uploads our documents
 
 example:
 
